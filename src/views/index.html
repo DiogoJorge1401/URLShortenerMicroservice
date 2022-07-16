@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/styles.css" />
+    <title>Request Header Parser</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/styles.css">
-  <title>Request Header Parser</title>
-</head>
+  <body>
+    <header>
+      <h1>URL shortener microservice</h1>
+      <h2>short URL creation</h2>
+    </header>
 
-<body>
-  <header>
-    <h1>API Project: Request Header Parser Microservice</h1>
-  </header>
+    <main>
+      <p>Example: POST [project_url]/api/shorturl https://www.google.com</p>
 
-  <main>
-    <section>
-      <h2>Example Usage:</h2>
+      <section class="post">
+        <form action="/api/shorturl" method="post" class="form__container">
+          <fieldset class="form_fieldset">
+            <legend>URL Shortener</legend>
+
+            <label for="url">URL:</label>
+            <input
+              type="text"
+              name="url"
+              id="url"
+              class="url__input"
+              placeholder="https://freecodecamp.com.org/"
+            />
+            <button type="submit" class="form__btn">POST URL</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="section__example">
+        <div class="example__usage">
+          <h2>example Usage:</h2>
+
+          <a href="/api/shorturl/3" target="_blank">[project_url]/api/shorturl/3</a>
+        </div>
+
+        <div class="example_redirect">
+          <h3>will redirect to</h3>
+
+          <p>https://freecodecamp.com.org/</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
       <p>
-        <a href="/api/whoami" target="_blank">[project_url]/api/whoami</a>
+        Made with 💙 By
+        <a
+          href="https://github.com/DiogoJorge1401"
+          target="_blank"
+          class="github__link"
+        >
+          Diogo Jorge
+        </a>
       </p>
-    </section>
-
-    <section>
-      <h2>Example Output</h2>
-      <code>{"ipaddress":127.0.0.1,"language":"en-US,en;q=0.5","software":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"}</code>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      Made with 💙 By
-      <a href="https://github.com/DiogoJorge1401" target="_blank">
-        Diogo Jorge
-      </a>
-    </p>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>
