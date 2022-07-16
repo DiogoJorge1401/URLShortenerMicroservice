@@ -1,4 +1,4 @@
-import e from "express";
+import e, { urlencoded } from "express";
 import cors from "cors";
 import { routes } from "./routes";
 
@@ -7,6 +7,7 @@ const app = e();
 app.use(cors());
 
 app.use(e.json());
+app.use(e.urlencoded({ extended: true }))
 
 app.use("/public", e.static(`${__dirname}/public`));
 
