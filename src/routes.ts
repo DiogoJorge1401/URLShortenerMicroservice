@@ -22,8 +22,8 @@ routes.post("/shorturl", (req, res) => {
       short_url
     })
 
-  } catch (error) {
-    return res.json({ erros: "invalid URL" })
+  } catch (error: any) {
+    return res.json({ error: error.message })
   }
 });
 
