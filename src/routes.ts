@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { isValidURL } from './utils';
 
 const routes = Router();
 
@@ -8,7 +9,7 @@ const shortenedURLS = [
 
 routes.post("/shorturl", (req, res) => {
   try {
-    const parsedURL = new URL(req.body.url).toString()
+    const parsedURL = isValidURL(req.body.url)
     let short_url = shortenedURLS.findIndex(url => url === parsedURL)
 
     if (short_url === -1) {
