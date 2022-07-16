@@ -6,8 +6,6 @@ tsc -p ./tsconfig.json --pretty
 
 cp -R src/public dist/public
 
-cp -R src/styles dist/styles
-
 cp -R src/views dist/views
 
 cp package.json dist/
