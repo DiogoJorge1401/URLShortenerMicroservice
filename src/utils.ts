@@ -3,5 +3,5 @@ const urlPattern = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-
 export function isValidURL(candidate: string) {
   if (urlPattern.test(candidate))
     return candidate
-  throw new Error('Invalid URL format')
+  throw new Error('invalid url')
 }
